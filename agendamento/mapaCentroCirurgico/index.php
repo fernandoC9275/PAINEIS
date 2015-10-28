@@ -75,7 +75,7 @@ include_once('../../../oracle/connec.php');
 <script type="text/javascript">
     $( document ).ready(function() {
         $('#data').datepicker({
-            format: "dd/m/yyyy",
+            format: "dd/mm/yyyy",
             language: "pt-BR"
         });
 

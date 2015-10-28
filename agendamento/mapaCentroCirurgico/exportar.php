@@ -59,18 +59,13 @@ if(isset($data)) {
    AND ATENDIME.CD_LEITO = LEITO.CD_LEITO(+)
    AND UNID_INT.CD_UNID_INT(+) = AVISO_CIRURGIA.CD_UNID_INT
    AND ATENDIME.CD_MULTI_EMPRESA(+) = 1
-   ORDER BY 10 ASC,
-   11 ASC,
-   8 ASC,
-   7 ASC,
-   DS_CEN_CIR,
-   DS_SAL_CIR,
-   DT_INICIO_AGE_CIR,
-   HR_INICIO_AGE_CIR
+   ORDER BY  DS_CEN_CIR,
+          HR_INICIO_AGE_CIR
 
 
 ";
 }
+
 
 $objPHPExcel = new PHPExcel();
 
@@ -88,12 +83,11 @@ $objPHPExcel->getActiveSheet()->getStyle('A1')->getFont()->setBold(true);
                 ->setCellValue("C1", "Hora" )
                 ->setCellValue("D1", "Centro Cirúrgico / Sala" )
                 ->setCellValue("E1", "Convênio" )
-                ->setCellValue("F1", "Observação" )
-                ->setCellValue("G1", "Cirurgia" )
-                ->setCellValue("H1", "Cirurgião" )
-                ->setCellValue("I1", "1º Auxiliar" )
-                ->setCellValue("J1", "2º Auxiliar" )
-                ->setCellValue("K1", "Anestesista" );
+                ->setCellValue("F1", "Cirurgia" )
+                ->setCellValue("G1", "Cirurgião" )
+                ->setCellValue("H1", "1º Auxiliar" )
+                ->setCellValue("I1", "2º Auxiliar" )
+                ->setCellValue("J1", "Anestesista" );
 
 
 
@@ -103,12 +97,12 @@ $objPHPExcel->getActiveSheet()->getStyle('A1')->getFont()->setBold(true);
             $objPHPExcel->getActiveSheet()->getColumnDimension('C')->setWidth(10);
             $objPHPExcel->getActiveSheet()->getColumnDimension('D')->setWidth(20);
             $objPHPExcel->getActiveSheet()->getColumnDimension('E')->setWidth(20);
-            $objPHPExcel->getActiveSheet()->getColumnDimension('F')->setWidth(80);
+            $objPHPExcel->getActiveSheet()->getColumnDimension('F')->setWidth(40);
             $objPHPExcel->getActiveSheet()->getColumnDimension('G')->setWidth(50);
             $objPHPExcel->getActiveSheet()->getColumnDimension('H')->setWidth(50);
             $objPHPExcel->getActiveSheet()->getColumnDimension('I')->setWidth(50);
             $objPHPExcel->getActiveSheet()->getColumnDimension('J')->setWidth(50);
-            $objPHPExcel->getActiveSheet()->getColumnDimension('K')->setWidth(50);
+
 
 
 
@@ -138,12 +132,11 @@ $objPHPExcel->getActiveSheet()->getStyle('A1')->getFont()->setBold(true);
                 $objPHPExcel->getActiveSheet()->setCellValueByColumnAndRow(2, $i, $row['HR_INICIO_AGE_CIR']);
                 $objPHPExcel->getActiveSheet()->setCellValueByColumnAndRow(3, $i, $row['DS_SAL_CIR']);
                 $objPHPExcel->getActiveSheet()->setCellValueByColumnAndRow(4, $i, $convenio);
-                $objPHPExcel->getActiveSheet()->setCellValueByColumnAndRow(5, $i, $obs);
-                $objPHPExcel->getActiveSheet()->setCellValueByColumnAndRow(6, $i, $ds_cirurgia);
-                $objPHPExcel->getActiveSheet()->setCellValueByColumnAndRow(7, $i, $cirurgiao);
-                $objPHPExcel->getActiveSheet()->setCellValueByColumnAndRow(8, $i, $auxiliar1);
-                $objPHPExcel->getActiveSheet()->setCellValueByColumnAndRow(9, $i, $auxiliar2);
-                $objPHPExcel->getActiveSheet()->setCellValueByColumnAndRow(10, $i, $anestesista);
+                $objPHPExcel->getActiveSheet()->setCellValueByColumnAndRow(5, $i, $ds_cirurgia);
+                $objPHPExcel->getActiveSheet()->setCellValueByColumnAndRow(6, $i, $cirurgiao);
+                $objPHPExcel->getActiveSheet()->setCellValueByColumnAndRow(7, $i, $auxiliar1);
+                $objPHPExcel->getActiveSheet()->setCellValueByColumnAndRow(8, $i, $auxiliar2);
+                $objPHPExcel->getActiveSheet()->setCellValueByColumnAndRow(9, $i, $anestesista);
 
             }
 
