@@ -5,7 +5,7 @@
 
 #Versão 1.0<br>
 
-    #Painel Centro cirúrgico:<br>
+    #Relatório - Mapa Centro cirúrgico:<br>
     
     Utilização: O link interno para uso da aplicação encontra-se em : http://192.168.254.72:8083/paineis/agendamento/mapaCentroCirurgico/
     
