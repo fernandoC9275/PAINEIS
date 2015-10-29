@@ -67,7 +67,6 @@ if(isset($data)) {
 }
 
 
-
 $objPHPExcel = new PHPExcel();
 
 // Definimos o estilo da fonte
@@ -155,7 +154,7 @@ $objPHPExcel->getActiveSheet()->getStyle('A1')->getFont()->setBold(true);
 
             // Cabeçalho do arquivo para ele baixar
             header('Content-Type: application/vnd.ms-excel');
-            header('Content-Disposition: attachment;filename="'.$nome_arquivo.'_mapa_cirurgico.xls"');
+            header('Content-Disposition: attachment;filename="'.$nome_arquivo.'_mapa_cirurgico"');
             header('Cache-Control: max-age=0');
             // Se for o IE9, isso talvez seja necessário
             header('Cache-Control: max-age=1');
